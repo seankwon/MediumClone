@@ -1,4 +1,16 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.main_container {
+  overflow:hidden;
+  min-width: 100%;
+  background: #fff;
+}
+
+.cover {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0; 
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background: #CC3333;
+}
