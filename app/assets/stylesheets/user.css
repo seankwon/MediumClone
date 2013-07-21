@@ -1,4 +1,48 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+input {
+font-family: 'PT Sans', sans-serif;
+}
+
+.user-create-container {
+  border-top: 10px solid #95CAE4;
+  border-bottom: 10px solid #95CAE4;
+}
+
+.user-create-header h1{
+  text-align:center;
+}
+
+.user-create-form {
+  margin:0 auto;
+  padding: 5px 250px 5px 250px;
+}
+
+.user-create-form h1 {
+  font-size: 4em;
+}
+
+.user-input {
+  width: 80%;
+  display: block;
+  padding: 7px;
+  padding-left:15px;
+  padding-top:10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size:25px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-left: 5px solid #95CAE4;
+}
+
+.btn-submit {
+  background: #777!important;
+  color: #fff;
+  text-shadow: none;
+  transition: background 0.5s;
+}
+
+.btn-submit:hover {
+  background: #999!important;
+  cursor: pointer;
+}

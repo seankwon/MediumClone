@@ -1,5 +1,7 @@
 Medium::Application.routes.draw do
   root 'genrepages#home'
+  post 'user/create', to: 'user#create'
+  get  'user/new',    to: 'user#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
