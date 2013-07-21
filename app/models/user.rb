@@ -14,6 +14,10 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
   validates_presence_of :password, :on => :create
+  validates :email, presence: true, format: {with:VALID_EMAIL_REGEX},
+                    uniqueness: {case_sensitive: false}
+  validates :password, length: {minimum: 6}
+  validate :password_confirmation, presence: true
   before_create { generate_token(:auth_token) }
 
   def password
