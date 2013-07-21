@@ -11,7 +11,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
 end
 
 group :production do
@@ -33,6 +33,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'devise'
 # gem 'therubyracer', platforms: :ruby
 # Use unicorn as the app server
 # gem 'unicorn'
