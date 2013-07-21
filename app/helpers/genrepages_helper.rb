@@ -1,0 +1,2 @@
+module GenrepagesHelper
+end
