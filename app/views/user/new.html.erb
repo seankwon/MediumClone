@@ -4,12 +4,11 @@
   </div>
   <div class="user-create-form">
     <h1>Hi there!<h1>
-    <%= form_for(@user, :url => user_create_path(@user)) do |u| %>
+    <%= form_for(@user, :url => user_create_path) do |u| %>
       <%= u.text_field(:name, { class: 'user-input', :placeholder => 'Name' })%>
       <%= u.text_field(:email, { class: 'user-input',  :placeholder => 'Email Address' }) %>
       <%= u.password_field(:password, { class: 'user-input',  :placeholder => 'Password' }) %>
-      <%= u.password_field(:password_confirmation, { class: 'user-input',  :placeholder => 'Confirm password'} ) %>
-
+      <input type="password" name="password_confirmation" class="user-input" placeholder="Password confirmation" />
       <%= u.submit({class: 'btn btn-submit'})%>
     <% end %>
   </div>
