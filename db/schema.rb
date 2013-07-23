@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723041420) do
+ActiveRecord::Schema.define(version: 20130723041840) do
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20130723041420) do
     t.string   "auth_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "password_hash"
+    t.text     "password_salt"
   end
 
 end
