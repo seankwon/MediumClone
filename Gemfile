@@ -32,7 +32,7 @@ end
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'devise'
 # gem 'therubyracer', platforms: :ruby
 # Use unicorn as the app server
