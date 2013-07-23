@@ -10,27 +10,14 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
-require 'bcrypt'
 class User < ActiveRecord::Base
-  include BCrypt
   validates_presence_of :password, :on => :create
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
 
   validates :password, length: {minimum: 6}
-  validate :password_confirmation, presence: true
-  before_create { generate_token(:auth_token) }
-
-  def password
-    @password ||= Password.new(password)
-  end
-
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password = @password
-  end
-
+  
   private 
     def generate_token(column)
       begin
