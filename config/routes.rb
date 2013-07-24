@@ -1,6 +1,6 @@
 Medium::Application.routes.draw do
   root 'genrepages#home'
-  get  'user/new',     to: 'user#new'
+  get  '/signup',      to: 'user#new'
   get  '/login',       to: 'sessions#new'
 
   post 'sessions/create', to: 'sessions#create'
