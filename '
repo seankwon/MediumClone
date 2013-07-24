@@ -14,17 +14,16 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :password_confirmation, :on => :create
 
   attr_accessor :password, :password_confirmation
-  before_save :encrypt_password
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
   validates :password, length: {minimum: 6}
   before_create {generate_token(:auth_token)}
+  before_save :encrypt_password
 
-  def self.authenticate(options={})
-    user = find_by email: options[:email]
-    if user && user.password_hash == BCrypt::Engine.hash_secret(options[:password], user.password_salt)
+  def self.authenticate(email, password)
+    user = User.where(email: email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else
       nil
@@ -36,6 +35,16 @@ class User < ActiveRecord::Base
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
+  end
+
+  def self.password_salt
+    password_salt = User.select(:password_salt)
+    return password_salt
+  end
+
+  def self.password_hash
+    password_hash = User.select(:password_hash)
+    return password_hash
   end
 
   def encrypt_password

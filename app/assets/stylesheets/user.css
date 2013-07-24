@@ -2,26 +2,26 @@ input {
 font-family: 'PT Sans', sans-serif;
 }
 
-.user-create-container {
+.form-container {
   border-top: 10px solid #95CAE4;
   border-bottom: 10px solid #95CAE4;
 }
 
-.user-create-header h1{
+.form-header h1{
   text-align:center;
 }
 
-.user-create-form {
+.create-form {
   margin: 0 auto;
   padding: 5px 250px 5px 250px;
 }
 
-.user-create-form h1 {
+.create-form h1 {
   font-size: 4em;
 }
 
 .user-input {
-  width: 80%;
+  width: 100%;
   display: block;
   padding: 7px;
   padding-left:15px;

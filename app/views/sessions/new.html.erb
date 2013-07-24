@@ -1,0 +1,13 @@
+<div class='form-container'>
+  <div class="form-header">
+    <h1>Login</h1>
+  </div>
+  <div class="create-form">
+    <h1>Welcome!</h1>
+    <%= form_tag('/sessions/create', method: 'post') do %>
+    <%= text_field_tag(:email, nil, { class: 'user-input', :placeholder => 'Email' })%>
+    <%= password_field_tag(:password, nil, { class: 'user-input', :placeholder => 'Password' })%>
+    <%= submit_tag('Submit', { class: 'btn btn-submit' }) %>
+    <% end %>
+  </div>
+</div>

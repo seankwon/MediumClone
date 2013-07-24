@@ -1,8 +1,8 @@
-<div class="user-create-container">
-  <div class="user-create-header">
+<div class="form-container">
+  <div class="form-header">
     <h1>Create User</h1>
   </div>
-  <div class="user-create-form">
+  <div class="create-form">
     <h1>Hi there!<h1>
     <%= form_for(@user, :url => user_create_path) do |u| %>
       <%= u.text_field(:name, { class: 'user-input', :placeholder => 'Name' })%>
