@@ -11,8 +11,8 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'capybara'
   gem 'cucumber-rails', :require => false
-  gem 'rspec-rails'
 end
 
 group :production do
