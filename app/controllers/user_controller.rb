@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+  include SessionsHelper
+  before_filter :signed_in_user, :only => [:show]
   def new
     @user = User.new
   end
@@ -10,6 +12,10 @@ class UserController < ApplicationController
     else
       redirect_to user_new_path, flash: "Login fail"
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private

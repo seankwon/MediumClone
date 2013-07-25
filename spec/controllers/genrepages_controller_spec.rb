@@ -7,6 +7,11 @@ describe 'GenrepagesController' do
       visit root_path
       expect(page).to have_content('Medium platform')
     end
+
+    it 'should have a link redirecting to sign in' do
+      visit root_path
+      expect(page).to have_link('Sign in!')
+    end
   end
 
 end

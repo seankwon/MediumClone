@@ -11,6 +11,7 @@
 #  updated_at :datetime
 #
 class User < ActiveRecord::Base
+  has_many :posts
   validates_presence_of :password, :password_confirmation, :on => :create
 
   attr_accessor :password, :password_confirmation
