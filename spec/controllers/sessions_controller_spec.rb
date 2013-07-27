@@ -34,8 +34,8 @@ describe 'SessionsController' do
   private
     def sign_in_with(email, password)
       visit login_path
-      fill_in 'email', with: email
-      fill_in 'password', with: password
+      fill_in 'user[email]', with: email
+      fill_in 'user[password]', with: password
       click_button 'Submit'
     end
 

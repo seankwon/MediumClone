@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
   include SessionsHelper
   def new
+    @user = User.new()
   end
 
   def create
-    user = User.authenticate(sessions_params)
+    user = User.authenticate(user_params)
     if user
       sign_in user
       redirect_back_or user, flash[:notice] = "You have successfully signed in!"
@@ -16,5 +17,9 @@ class SessionsController < ApplicationController
   private
     def sessions_params
       params.permit!
+    end
+
+    def user_params
+      params.require(:user).permit!
     end
 end

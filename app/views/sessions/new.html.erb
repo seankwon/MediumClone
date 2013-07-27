@@ -4,10 +4,10 @@
   </div>
   <div class="create-form">
     <h1>Welcome!</h1>
-    <%= form_tag('/sessions/create', method: 'post') do %>
-      <%= text_field_tag(:email, nil, { class: 'user-input', :placeholder => 'Email' })%>
-      <%= password_field_tag(:password, nil, { class: 'user-input', :placeholder => 'Password' })%>
-      <%= submit_tag('Submit', { class: 'btn btn-submit' }) %>
+    <%= form_for @user, :url => sessions_create_path do |u| %>
+      <%= u.text_field(:email, { class: 'user-input', :placeholder => 'Email' })%>
+      <%= u.password_field(:password, { class: 'user-input', :placeholder => 'Password' })%>
+      <%= u.submit('Submit', { class: 'btn btn-submit' }) %>
     <% end %>
     <br><br>
     <p>Don't have an Account? <a href="/signup">Sign up!</a></p>
