@@ -1,10 +1,11 @@
+<%= render 'layouts/flash_messages' %>
 <div class='form-container'>
   <div class="form-header">
     <h1>Login</h1>
   </div>
   <div class="create-form">
     <h1>Welcome!</h1>
-    <%= form_for @user, :url => sessions_create_path do |u| %>
+    <%= form_for User.new, :url => sessions_create_path do |u| %>
       <%= u.text_field(:email, { class: 'user-input', :placeholder => 'Email' })%>
       <%= u.password_field(:password, { class: 'user-input', :placeholder => 'Password' })%>
       <%= u.submit('Submit', { class: 'btn btn-submit' }) %>

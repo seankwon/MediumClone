@@ -6,6 +6,7 @@ group :development, :test do
   gem 'pg'
   gem 'rspec-rails'
   gem 'factory_girl_rails', ">= 4.2.0"
+  gem 'unicorn'
 end
 
 group :test do

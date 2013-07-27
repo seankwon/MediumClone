@@ -1,5 +1,2 @@
-<% flash.each do |name, msg| %>
-  <% content_tag :div, msg, class: '' %>
-<% end %>
-
-<h1>Hello World</h1>
+<%= render 'layouts/flash_messages' %>
+<h1><%= @user.email %></h1>
