@@ -15,6 +15,7 @@ class UserController < ApplicationController
   end
 
   def show
+    redirect_to root_path if params[:id].nil? 
     @user = User.find(params[:id])
   end
 

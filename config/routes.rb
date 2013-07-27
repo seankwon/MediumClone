@@ -1,8 +1,9 @@
 Medium::Application.routes.draw do
+  resources :user, only: [:show]
+
   root 'genrepages#home'
   get  '/signup',      to: 'user#new'
   get  '/login',       to: 'sessions#new'
-  get  '/user/:id',    to: 'user#show',   as: 'profile'
 
   post 'sessions/create', to: 'sessions#create'
   post 'user/create',     to: 'user#create'
