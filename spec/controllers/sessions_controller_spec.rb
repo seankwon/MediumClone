@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'SessionsController' do
   before :each do
-    User.create(:name => 'person', :email => 'person@example.com', :password => 'foobar')
+    User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar')
   end
 
   describe 'Login page' do
