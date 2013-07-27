@@ -15,20 +15,21 @@ describe 'SessionsController' do
   end
 
   describe 'the signin process', :type => :feature do
-    it 'should show a login success message' do
+    it 'should show a login success message with an x' do
       sign_in_with 'person@example.com', 'foobar'
       user_sees_notice 'Successful login!'
     end
 
-    #it 'should flash an error message when wrong password' do
-    #  sign_in_with 'person@example.com', 'wrong'
-    #  user_sees_error 'Sorry, wrong credentials!'
-    #end
+    it 'should flash an error message when wrong password' do
+      sign_in_with 'person@example.com', 'wrong'
+      user_sees_error 'Sorry, wrong credentials!'
+    end
 
     it 'should flash error message when non-existant email' do
       sign_in_with 'wrong@person.com', 'foobar'
       user_sees_error 'Sorry, wrong credentials!'
     end
+
   end
 
   private
@@ -41,6 +42,7 @@ describe 'SessionsController' do
 
     def user_sees_notice(text)
       expect(page).to have_css '.success_msg', text: text
+      expect(page).to have_css '.hide_flash'
     end
 
     def user_sees_error(text)

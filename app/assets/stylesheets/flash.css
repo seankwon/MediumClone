@@ -1,0 +1,29 @@
+.flash {
+  min-width: 100%;
+  z-index: 100;
+  opacity: 0.8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position:absolute;
+  text-align: center;
+  top: 0;
+}
+
+.success_msg {
+  background: #A3E496;
+}
+
+.error_msg {
+  background: #CC3333;
+}
+
+.hide_flash {
+  float: right;
+  transition: color 0.5s;
+  padding-right: 20px;
+}
+
+.hide_flash:hover {
+  color: #333;
+  cursor: pointer;
+}

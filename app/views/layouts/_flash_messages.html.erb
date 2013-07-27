@@ -1,7 +1,8 @@
 <div>
   <% flash.each do |key, value| %>
-    <div class="<%= flash_class(key) %> fade in">
+    <div class="flash <%= flash_class(key) %> fade in">
       <%= value %>
+      <a class="hide_flash">x</a>
     </div>
   <% end %>
 </div>
