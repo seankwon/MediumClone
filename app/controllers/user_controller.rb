@@ -3,6 +3,7 @@ class UserController < ApplicationController
   before_filter :signed_in_user, :only => [:show]
   def new
     @user = User.new
+    @url = 'user_create_path'
   end
 
   def create
@@ -16,6 +17,11 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    @url = 'user_create_path'
   end
 
   private

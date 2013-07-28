@@ -4,12 +4,6 @@
   </div>
   <div class="create-form">
     <h1>Hi there!<h1>
-    <%= form_for(@user, :url => user_create_path) do |u| %>
-      <%= u.text_field(:name, { class: 'user-input', :placeholder => 'Name' })%>
-      <%= u.text_field(:email, { class: 'user-input',  :placeholder => 'Email Address' }) %>
-      <%= u.password_field(:password, { class: 'user-input',  :placeholder => 'Password' }) %>
-      <%= u.password_field(:password_confirmation, {class: 'user-input', :placeholder => 'Confirm Password'})%>
-      <%= u.submit(class: 'btn btn-submit') %>
-    <% end %>
+    <%= render partial: 'user_form', locals: {password: true} %>
   </div>
 </div>

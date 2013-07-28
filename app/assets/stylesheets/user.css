@@ -58,3 +58,8 @@ font-family: 'PT Sans', sans-serif;
 .profile_container {
   text-align:center;
 }
+
+.edit-profile-container {
+  border-top: 10px solid #95CAE4;
+  border-bottom: 10px solid #95CAE4;
+}
