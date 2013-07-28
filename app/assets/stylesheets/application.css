@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+@import 'flash.css';
+@import 'genrepages.css';
+@import 'posts.css';
+@import 'user.css';
