@@ -2,6 +2,10 @@ input {
   font-family: 'PT Sans', sans-serif;
 }
 
+textarea {
+  font-family: 'PT Sans', sans-serif;
+}
+
 .form-container {
   border-top: 10px solid #95CAE4;
   border-bottom: 10px solid #95CAE4;
