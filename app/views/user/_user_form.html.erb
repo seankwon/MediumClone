@@ -1,7 +1,7 @@
 <%= form_for(@user, :url => @url) do |u| %>
   <%= u.text_field(:name, { class: 'user-input', :placeholder => 'Name' })%>
   <%= u.text_field(:email, { class: 'user-input',  :placeholder => 'Email Address' }) %>
-  <%= u.text_field(:description, { class: 'user-input', :placeholder => 'Describe yourself'})%>
+  <%= u.text_area(:description, { class: 'user-input', :placeholder => 'Describe yourself'})%>
   <% if defined?(password) && password %>
     <%= u.password_field(:password, { class: 'user-input',  :placeholder => 'Password' }) %>
     <%= u.password_field(:password_confirmation, {class: 'user-input', :placeholder => 'Confirm Password'})%>

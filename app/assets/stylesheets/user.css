@@ -1,5 +1,5 @@
 input {
-font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .form-container {
@@ -61,5 +61,6 @@ font-family: 'PT Sans', sans-serif;
 
 .edit-profile-container {
   border-top: 10px solid #95CAE4;
+  padding: 5px 250px 5px 250px;
   border-bottom: 10px solid #95CAE4;
 }

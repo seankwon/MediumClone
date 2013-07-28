@@ -10,7 +10,7 @@ describe 'UserController' do
     end
 
     it 'should have the user\'s information' do
-      page.should have_content('person')
+      page.should have_content('Edit User')
     end
 
     #it 'should not have password content' do
