@@ -1,2 +1,2 @@
-<%= render 'layouts/flash_messages' %>
-<h1><%= @user.email %></h1>
+<%= render partial: 'layouts/flash_messages' %>
+<%= render partial: 'layouts/main_ui', locals: {user: @user, content: 'profile', outerBackground: 'profile-outer-background', innerBackground: 'profile-inner-background'} %>

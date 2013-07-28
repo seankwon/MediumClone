@@ -1,6 +1,14 @@
 <div class="main-container">
+  <% if defined?(outerBackground) %>
+  <aside class="cover <%= outerBackground %>">
+  <% else %>
   <aside class="cover">
+  <% end%>
+    <% if defined?(innerBackground) %>
+    <div class="cover-body <%= innerBackground %>">
+    <% else %>
     <div class="cover-body">
+    <% end %>
       <div class="cover-body-inner">
         <%= render partial: content %>
       </div>
