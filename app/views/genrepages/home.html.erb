@@ -1,16 +1,1 @@
-<div class="main-container">
-  <aside class="cover">
-    <div class="cover-body">
-      <div class="cover-body-inner">
-        <h1>Medium platform</h1>
-        <p>A place to read and write things for fun!
-        <br><br>
-        Read stuff, yay!
-        </p>
-        <div class="option-body">
-          <a class="btn" href='<%= login_url %>'>Sign in!</a>
-        </div>
-      </div>
-    </div>
-  </aside>
-</div>
+<%= render partial: 'layouts/main_ui', locals: {content: 'landing'} %>

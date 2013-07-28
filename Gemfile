@@ -6,7 +6,6 @@ group :development, :test do
   gem 'pg'
   gem 'rspec-rails'
   gem 'factory_girl_rails', ">= 4.2.0"
-  gem 'unicorn'
 end
 
 group :test do
@@ -36,6 +35,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'devise'
+gem 'unicorn-rails'
 # gem 'therubyracer', platforms: :ruby
 # Use unicorn as the app server
 # gem 'unicorn'
