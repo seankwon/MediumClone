@@ -18,6 +18,20 @@ describe 'UserController' do
     #end
   end
 
+  describe 'Sign Up page' do
+    it 'should create a user' do
+      visit signup_path
+      fill_in 'user[name]', with: 'person'
+      fill_in 'user[email]', with: 'person@yahoo.com'
+      fill_in 'user[description]', with: 'Hello world'
+      fill_in 'user[password]', with: 'foobar'
+      fill_in 'user[password_confirmation]', with: 'foobar'
+      click_button 'Create User'
+      expect(page).to have_css '.success_msg', text: 'Creation successful!'
+      expect(page).to have_css '.hide_flash'
+    end
+  end
+
   private 
     def sign_in_with(email, password)
       visit login_path
@@ -25,4 +39,5 @@ describe 'UserController' do
       fill_in 'user[password]', with: password
       click_button 'Submit'
     end
+
 end
