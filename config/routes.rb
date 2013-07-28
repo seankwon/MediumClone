@@ -4,6 +4,8 @@ Medium::Application.routes.draw do
   get  '/signup',      to: 'user#new'
   get  '/login',       to: 'sessions#new'
 
+  put  'user/:id/update', to: 'user#update'
+
   post 'sessions/create', to: 'sessions#create'
   post 'user/create',     to: 'user#create'
   # The priority is based upon order of creation: first created -> highest priority.

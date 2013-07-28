@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   include SessionsHelper
-  before_filter :signed_in_user, :only => [:show]
+  before_filter :signed_in_user, :only => [:show, :edit, :update]
   def new
     @user = User.new
     @url = 'user/create'
@@ -21,7 +21,11 @@ class UserController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @url = 'user_create_path'
+    @url = 'user/' + @user.id.to_s + '/update'
+  end
+
+  def update
+    @user.update(user_params)
   end
 
   private
