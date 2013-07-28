@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724234235) do
+ActiveRecord::Schema.define(version: 20130728145835) do
 
   create_table "posts", force: true do |t|
     t.string   "header"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20130724234235) do
     t.datetime "updated_at"
     t.text     "password_hash"
     t.text     "password_salt"
+    t.text     "description"
   end
 
 end
