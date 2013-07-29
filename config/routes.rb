@@ -1,10 +1,8 @@
 Medium::Application.routes.draw do
-  resources :user, only: [:show, :edit]
+  resources :user, only: [:show, :edit, :update]
   root 'genrepages#home'
   get  '/signup',      to: 'user#new'
   get  '/login',       to: 'sessions#new'
-
-  put  'user/:id/update', to: 'user#update'
 
   post 'sessions/create', to: 'sessions#create'
   post 'user/create',     to: 'user#create'

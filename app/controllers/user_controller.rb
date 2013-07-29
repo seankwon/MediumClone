@@ -11,7 +11,7 @@ class UserController < ApplicationController
     if @user.save
       redirect_to root_path, success: "Creation successful!"
     else
-      redirect_to user_new_path, flash: "Login fail"
+      redirect_to user_new_path, error: "Login fail"
     end
   end
 
@@ -21,15 +21,21 @@ class UserController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @url = 'user/' + @user.id.to_s + '/update'
+    @url = '/user/' + params[:id]
   end
 
   def update
-    @user.update(user_params)
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to @user, success: 'Editing successful!'
+    else
+      redirect_to edit_user_path(@user.id), error: 'Editing failed!'
+    end
   end
 
   private
     def user_params
       params.require(:user).permit!
     end
+
 end

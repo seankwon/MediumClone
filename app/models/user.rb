@@ -14,14 +14,15 @@
 class User < ActiveRecord::Base
   has_many :posts
   validates_presence_of :password, :password_confirmation, :on => :create
-
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  #validate :password, length: {minimum: 6}
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
-  validates :password, length: {minimum: 6}
+  validates :description, length: {minimum: 10}
+
   before_create {generate_token(:auth_token)}
 
   def self.authenticate(options={})

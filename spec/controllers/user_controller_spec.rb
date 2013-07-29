@@ -4,7 +4,7 @@ describe 'UserController' do
 
   describe 'Edit profile page' do
     before :each do
-      User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar')
+      User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar', :description => 'Lol, this is a test')
       sign_in_with 'person@example.com', 'foobar'
       click_link 'Edit Profile'
     end
@@ -13,9 +13,16 @@ describe 'UserController' do
       page.should have_content('Edit User')
     end
 
-    #it 'should not have password content' do
-    #  page.should_not have_
-    #end
+    it 'should have a success message' do
+      edit_fields_with('edited person', 'pesson@example2.com', 'A testing Description')
+      expect_msg_with('.success_msg', 'Editing successful!')
+    end
+
+    it 'should have an error message' do
+      edit_fields_with('edited person', 'wrong email', 'helllo world')
+      expect_msg_with('.error_msg', 'Editing failed!')
+    end
+
   end
 
   describe 'Sign Up page' do
@@ -38,6 +45,18 @@ describe 'UserController' do
       fill_in 'user[email]', with: email
       fill_in 'user[password]', with: password
       click_button 'Submit'
+    end
+
+    def edit_fields_with(name, email, description)
+      fill_in 'user[name]', with: name
+      fill_in 'user[email]', with: email
+      fill_in 'user[description]', with: description
+      click_button 'Update User'
+    end
+
+    def expect_msg_with(css, msg)
+      expect(page).to have_css css, text: msg
+      expect(page).to have_css '.hide_flash'
     end
 
 end
