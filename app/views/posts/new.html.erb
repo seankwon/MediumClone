@@ -1,3 +1,5 @@
+<h1>Create Post</h1>
 <%= form_for @post do |form| %>
-  <%= form.cktext_area :content%>
+  <%= form.cktext_area :content %>
+  <%= form.submit('Submit', { class: 'btn btn-submit'} ) %>
 <% end %>
