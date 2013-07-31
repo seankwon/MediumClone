@@ -36,9 +36,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    ckeditor (4.0.4)
-      mime-types
-      orm_adapter
+    ckeditor-rails (0.0.5)
+      rails (>= 3.X)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -186,7 +185,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara
-  ckeditor
+  ckeditor-rails
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner

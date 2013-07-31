@@ -39,7 +39,7 @@ gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'devise'
 gem 'unicorn-rails'
 gem 'spork'
-gem 'ckeditor'
+gem 'ckeditor-rails'
 # gem 'therubyracer', platforms: :ruby
 # Use unicorn as the app server
 # gem 'unicorn'
