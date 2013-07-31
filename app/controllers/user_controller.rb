@@ -1,6 +1,8 @@
 class UserController < ApplicationController
   include SessionsHelper
   before_filter :signed_in_user, :only => [:show, :edit, :update]
+  before_filter :correct_user, :only => [:show]
+
   def new
     @user = User.new
     @url = 'user/create'

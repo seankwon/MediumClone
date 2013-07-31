@@ -9,7 +9,7 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||= User.find_by auth_token: cookies[:auth_token] if cookies[auth_token]
+    @current_user ||= User.find_by auth_token: cookies[:auth_token]
   end
 
   def current_user=(user)
@@ -37,7 +37,15 @@ module SessionsHelper
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to login_path, notice: "Log in please"
+      redirect_to login_path, error: "Log in please"
     end
   end
+
+  def correct_user
+    unless current_user?(User.find_by id: params[:id])
+      store_location
+      redirect_to login_path, error: "Wrong user"
+    end
+  end
+
 end
