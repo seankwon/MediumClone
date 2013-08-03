@@ -1,6 +1,17 @@
-<h1>New Post</h1>
-<%= form_for(@post, :url => post_create_path) do |p| %>
-  <%= p.text_field :header %>
-  <%= p.text_area :content, :class => 'redactor', :rows => 40 %>
-  <%= p.submit %>
-<% end %>
+<div class="new-post-container">
+  <div class="create-post-form">
+    <h1>Create Post</h1>
+    <%= form_for(@post, :url => post_create_path) do |p| %>
+      <%= p.text_field :header, :class => 'user-input', :placeholder => 'Header' %>
+      <br>
+      <br>
+      <%= p.text_area :content, :class => 'redactor redact-config', :rows => 40, :cols => 120 %>
+      <br>
+      <br>
+      <%= p.submit(:class => 'btn-submit btn') %>
+    <% end %>
+  </div>
+</div>
+
+
+

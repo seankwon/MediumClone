@@ -1,4 +1,16 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.new-post-container {
+  border-top: 10px solid #95CAE4;
+  border-bottom: 10px solid #95CAE4;
+}
+
+.create-post-form {
+  padding: 5px 250px 5px 250px;
+}
+
+.create-post-form h1 {
+  font-size: 3em;
+}
+
+.redact-config {
+  height: 200px!important;
+}
