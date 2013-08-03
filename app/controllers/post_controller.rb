@@ -9,7 +9,7 @@ class PostController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @user, success: 'Post creation successful!'
+      redirect_to user_path(current_user.id), success: 'Post creation successful!'
     else
       redirect_to newpost_path, error: 'Post failed'
     end
