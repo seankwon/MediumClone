@@ -29,7 +29,16 @@ describe 'SessionsController' do
       sign_in_with 'wrong@person.com', 'foobar'
       user_sees_error 'Sorry, wrong credentials!'
     end
+  end
 
+  describe 'user is already signed in' do
+    it 'should redirect to profile page if user is already logged in' do
+      sign_in_with 'person@example.com', 'foobar'
+      user_sees_notice 'Successful login!'
+      visit root_path
+      click_link 'Sign in!'
+      expect(page).to have_content 'person'
+    end
   end
 
   private
