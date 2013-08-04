@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   include SessionsHelper
+  include PgHelper
   before_filter :signed_in_user, :only => [:show, :edit, :update]
   before_filter :correct_user, :only => [:show, :edit]
 
@@ -19,6 +20,7 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = find_posts_by_user_id(@user.id)
   end
 
   def edit

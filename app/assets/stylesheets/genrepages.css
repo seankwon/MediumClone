@@ -94,3 +94,14 @@ p {
   position:relative;
   top:1px;
 }
+
+.content-container {
+  position: absolute;
+  left: 30%;
+}
+
+.inner-content-container {
+  width: 100%;
+  padding: 50px 85px;
+  max-width:810px;
+}
