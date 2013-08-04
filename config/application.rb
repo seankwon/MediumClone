@@ -8,16 +8,14 @@ Bundler.require(:default, Rails.env)
 
 module Medium
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+  ActionDispatch::Callbacks.after do
+    # Reload the factories
+      return unless (Rails.env.development? || Rails.env.test?)
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
-
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+        unless FactoryGirl.factories.blank? # first init will load factories, this should only run on subsequent reloads
+            FactoryGirl.factories.clear
+                FactoryGirl.find_definitions
+                  end
+                  end
   end
 end

@@ -6,7 +6,6 @@ describe 'SessionsController' do
   end
 
   describe 'Login page' do
-    #A spec test for seeing if it works, lol.
     it 'should have content' do
       visit login_path
       page.should have_selector('h1', 'Login')
@@ -14,7 +13,7 @@ describe 'SessionsController' do
     end
   end
 
-  describe 'the signin process', :type => :feature do
+  describe 'the signin process' do
     it 'should show a login success message with an x' do
       sign_in_with 'person@example.com', 'foobar'
       user_sees_notice 'Successful login!'
@@ -32,13 +31,15 @@ describe 'SessionsController' do
   end
 
   describe 'user is already signed in' do
+
     it 'should redirect to profile page if user is already logged in' do
       sign_in_with 'person@example.com', 'foobar'
       user_sees_notice 'Successful login!'
       visit root_path
-      click_link 'Sign in!'
+      click_link 'Profile'
       expect(page).to have_content 'person'
     end
+
   end
 
   private

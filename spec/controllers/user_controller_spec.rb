@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe 'UserController' do
 
   describe 'Edit profile page' do
