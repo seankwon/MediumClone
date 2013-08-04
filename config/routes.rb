@@ -1,4 +1,5 @@
 Medium::Application.routes.draw do
+  mount RedactorRails::Engine => '/redactor_rails'
   resources :user, only: [:show, :edit, :update]
   root 'genrepages#home'
   get  '/signup',      to: 'user#new'
