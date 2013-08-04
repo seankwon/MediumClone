@@ -11,8 +11,8 @@ describe 'PostController' do
 
     it 'should create and save a post' do
       header = 'This is my test header for testing purposes'
-      content = 'Lorem iposufeiwofjeiwofejiwofejiwoafeiowafjeiwoafeiwoafejiwoafeiwoafejiowafejiwao'
-      fill_in_fields_with(header, content)
+      content = 'Helloooooooooooofejiwoafjeiwajfoewiajfeiwajfowifewoajfiewoajfoejiowafjaiowejfwaoeifwojf'
+      fill_in_fields_with header, content
       expect_msg_with 'success_msg', 'Post creation successful!'
     end
   end
@@ -31,7 +31,7 @@ describe 'PostController' do
       click_button 'Create Post'
     end
 
-    def expect_msg_with
+    def expect_msg_with(css, msg)
       expect(page).to have_css css, text: msg
       expect(page).to have_css '.hide_flash'
     end
