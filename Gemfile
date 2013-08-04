@@ -40,7 +40,7 @@ gem 'devise'
 gem 'unicorn-rails'
 gem 'spork'
 gem 'redactor-rails'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'carrierwave'
 gem 'mini_magick'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
