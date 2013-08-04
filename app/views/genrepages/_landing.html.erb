@@ -5,7 +5,7 @@
   Read stuff, yay!
 </p>
 <div class="option-body">
-  <% if signed_in? %>
+  <% unless signed_in? %>
   <a class="btn" href='<%= user_path(current_user) %>'>Profile</a>
   <% else %>
   <a class="btn" href='<%= login_url %>'>Sign in!</a>
