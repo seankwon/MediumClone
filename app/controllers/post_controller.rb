@@ -11,7 +11,7 @@ class PostController < ApplicationController
     if @post.save
       redirect_to user_path(current_user.id), success: 'Post creation successful!'
     else
-      redirect_to newpost_path, error: 'Post failed'
+      redirect_to newpost_path, error: 'Post failed!'
     end
   end
 

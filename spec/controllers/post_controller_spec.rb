@@ -13,7 +13,12 @@ describe 'PostController' do
       header = 'This is my test header for testing purposes'
       content = 'Helloooooooooooofejiwoafjeiwajfoewiajfeiwajfowifewoajfiewoajfoejiowafjaiowejfwaoeifwojf'
       fill_in_fields_with header, content
-      expect_msg_with 'success_msg', 'Post creation successful!'
+      expect_msg_with '.success_msg', 'Post creation successful!'
+    end
+
+    it 'should not save post when fields aren\'t filled' do
+      fill_in_fields_with '', ''
+      expect_msg_with '.error_msg', 'Post failed!'
     end
   end
 
