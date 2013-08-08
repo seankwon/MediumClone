@@ -16,6 +16,11 @@ class PostController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find_by id: params[:id]
+    @user = User.find_by id: @post.user_id
+  end
+
   def update
   end
 

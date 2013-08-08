@@ -16,7 +16,9 @@
   </aside>
   <div class="content-container">
     <div class="inner-content-container">
-      <%= render partial: posts %>
+      <% if defined?(posts) %>
+        <%= render partial: posts %>
+      <% end %>
     </div>
   </div>
 </div>

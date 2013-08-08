@@ -1,0 +1,16 @@
+<div class="post-wrapper-outer">
+  <div class="post-wrapper-inner">
+    <div class="post-aside-wrapper">
+      <div class="post-aside">
+        <p><%= @user.name %></p>
+        <p><%= @user.description %></p>
+      </div>
+      <div class="post-header">
+        <h1><%= @post.header %></h1>
+      </div>
+      <div class="post-content">
+        <p><%= @post.content.html_safe %></p>
+      </div>
+    </div>
+  </div>
+</div>

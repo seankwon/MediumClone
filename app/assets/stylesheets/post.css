@@ -14,3 +14,49 @@
 .redact-config {
   height: 200px!important;
 }
+
+.post-wrapper-outer {
+  padding-top: 120px;
+  position: relative;
+}
+
+.post-wrapper-inner {
+  margin: 0 auto;
+  max-width:700px;
+  position: relative;
+  right: 0;
+}
+
+.post-aside {
+  position: relative;
+  width: 160px;
+  margin-left: -230px;
+  border-top: 0;
+  padding-top: 0;
+  float: left;
+  text-align: right;
+  position: fixed;
+}
+
+.post-aside-wrapper {
+  display: block;
+}
+
+.post-content {
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.post-header {
+  font-size: 35px;
+}
+
+.header_link {
+  color: #000;
+  transition: color 0.5s;
+  text-decoration: none;
+}
+
+.header_link:hover {
+  color: #999;
+}

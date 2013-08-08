@@ -1,4 +1,5 @@
-<%= @posts.each do |n| %>
-  <h1><%= n.header %></h1>
-  <p><%= n.content.html_safe %></p>
+<% @posts.each do |n| %>
+  <h1><a class="header_link" href="/post/<%= n.id %>"><%= n.header %></a></h1>
+  <hr>
+  <p><%= n.content.truncate(400).html_safe %></p>
 <% end %>
