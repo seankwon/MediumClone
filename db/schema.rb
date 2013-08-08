@@ -28,23 +28,6 @@ ActiveRecord::Schema.define(version: 20130804155152) do
     t.datetime "updated_at"
   end
 
-  create_table "redactor_assets", force: true do |t|
-    t.integer  "user_id"
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable", using: :btree
-  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "name"
