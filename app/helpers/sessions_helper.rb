@@ -5,7 +5,7 @@ module SessionsHelper
   end
 
   def signed_in?
-    current_user.nil?
+    !current_user.nil?
   end
 
   def current_user
@@ -35,7 +35,7 @@ module SessionsHelper
   end
 
   def signed_in_user
-    if signed_in?
+    unless signed_in?
       store_location
       redirect_to login_path, error: "Log in please"
     end

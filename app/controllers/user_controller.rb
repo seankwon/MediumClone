@@ -21,6 +21,7 @@ class UserController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = find_posts_by_user_id @user.id
+    @editing = true if signed_in?
   end
 
   def edit

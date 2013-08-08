@@ -15,4 +15,11 @@ class Post < ActiveRecord::Base
   validates_presence_of :content, :header
   validates :content, uniqueness: true, length: {minimum: 30}
   validates :header, uniqueness: true, length: {minimum: 10}
+  before_save 
+
+  #private 
+  #  newline = "/n/r"
+  #  def HTMLify(content)
+  #    if /#{newline}/.match(content)
+  #  end
 end

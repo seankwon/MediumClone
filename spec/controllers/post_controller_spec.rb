@@ -29,10 +29,16 @@ describe 'PostController' do
     before :each do
       person = User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar', :description => 'Lol, this is a test')
       newPost = Post.create!(:header => 'This is a fake header for my test', :content => 'Swear to me! Wanna see a magic trick? ahhhhh it\'s gone!!!', :genre_id => 2, :user_id => person.id)
+      sign_in_with 'person@example.com', 'foobar'
     end
 
     it 'should edit a post with a success message' do
-      
+      expect(page).to have_content 'This is a fake header for my test'
+      expect(page).to have_content 'Swear to me! Wanna see a magic trick? ahhhhh it\'s gone!!!'
+    end
+
+    it 'should show an success message when editing succeeds' do
+
     end
   end
 

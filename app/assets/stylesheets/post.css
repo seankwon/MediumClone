@@ -62,3 +62,19 @@
 .header_link:hover {
   color: #999;
 }
+
+.edit-link {
+  display: block;
+}
+
+.edit-link a {
+  color:#999;
+  font-style: italic;
+  display: block;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.edit-link a:hover {
+  color:#000;
+}
