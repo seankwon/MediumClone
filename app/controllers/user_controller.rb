@@ -20,7 +20,7 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = find_posts_by_user_id(@user.id)
+    @posts = find_posts_by_user_id @user.id
   end
 
   def edit

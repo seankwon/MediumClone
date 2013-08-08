@@ -39,6 +39,7 @@ gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'devise'
 gem 'unicorn-rails'
 gem 'spork'
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
