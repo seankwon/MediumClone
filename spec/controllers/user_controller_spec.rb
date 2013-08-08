@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'controllers_helper'
+include ControllerHelper
 
 describe 'UserController' do
 

@@ -1,10 +1,13 @@
 require 'spec_helper'
+require 'controllers_helper'
+include ControllerHelper
 
 describe 'PostController' do
 
   describe 'Create Post page' do
+
     before :each do 
-      User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar', :description => 'Lol, this is a test')
+      person = User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar', :description => 'Lol, this is a test')
       sign_in_with 'person@example.com', 'foobar'
       click_link 'Create Post'
     end
@@ -22,23 +25,15 @@ describe 'PostController' do
     end
   end
 
-  private 
-    def sign_in_with(email, password)
-      visit login_path
-      fill_in 'user[email]', with: email
-      fill_in 'user[password]', with: password
-      click_button 'Submit'
+  describe 'Edit Post page' do
+    before :each do
+      person = User.create!(:name => 'person', :email => 'person@example.com', :password => 'foobar', :password_confirmation => 'foobar', :description => 'Lol, this is a test')
+      newPost = Post.create!(:header => 'This is a fake header for my test', :content => 'Swear to me! Wanna see a magic trick? ahhhhh it\'s gone!!!', :genre_id => 2, :user_id => person.id)
     end
 
-    def fill_in_fields_with(header, content)
-      fill_in 'post[content]', with: content
-      fill_in 'post[header]', with: header
-      click_button 'Create Post'
+    it 'should edit a post with a success message' do
+      
     end
-
-    def expect_msg_with(css, msg)
-      expect(page).to have_css css, text: msg
-      expect(page).to have_css '.hide_flash'
-    end
+  end
 
 end
