@@ -1,0 +1,23 @@
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+//]]>
+</script> 
+<div class="new-post-container">
+  <div class="create-post-form">
+    <h1>Create Post</h1>
+    <%= form_for(@post, :url => @url) do |p| %>
+      <%= p.text_field :header, :class => 'user-input', :placeholder => 'Header', :cols => '40' %>
+      <br>
+      <br>
+      <%= p.text_area :content, :class => 'redact-config', :placeholder => 'Content' %>
+      <br>
+      <br>
+      <%= p.submit(:class => 'btn-submit btn') %>
+    <% end %>
+  </div>
+</div>
+
+
+
