@@ -32,7 +32,7 @@ class PostController < ApplicationController
     if @post.update_attributes(post_params)
       redirect_to @post, success: 'Editing successful!'
     else
-      redirect_to edit_post_path(@post.id), error: 'Editing failed'
+      redirect_to edit_post_path(@post.id), error: 'Editing failed!'
     end
   end
 

@@ -1,3 +1,4 @@
+<%= render partial: 'layouts/flash_messages' %>
 <div class="post-wrapper-outer">
   <div class="post-wrapper-inner">
     <div class="post-aside-wrapper">
@@ -9,7 +10,7 @@
         <h1><%= @post.header %></h1>
       </div>
       <div class="post-content">
-        <p><%= @post.content.html_safe %></p>
+        <p><%= simple_format(@post.content.html_safe) %></p>
       </div>
     </div>
   </div>

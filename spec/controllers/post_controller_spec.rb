@@ -38,7 +38,18 @@ describe 'PostController' do
     end
 
     it 'should show an success message when editing succeeds' do
+      header = 'This is my test header for testing purposes'
+      content = 'Helloooooooooooofejiwoafjeiwajfoewiajfeiwajfowifewoajfiewoajfoejiowafjaiowejfwaoeifwojf'
+      click_link 'edit'
+      edit_fields_with header, content
+      expect_msg_with '.success_msg', 'Editing successful!'
+    end
 
+    it 'should show an error message when edit succeeds' do
+      header = 'This is my test header for testing purposes'
+      click_link 'edit'
+      edit_fields_with header, ''
+      expect_msg_with '.error_msg', 'Editing failed!'
     end
   end
 
